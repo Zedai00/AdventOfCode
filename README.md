@@ -1,3 +1,3 @@
 # AdventOfCode
 
-Advent Of Code In Python
+Advent Of Code In Python By Zed
