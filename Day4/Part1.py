@@ -81,5 +81,5 @@ def createBoards(file):
 
 
 if __name__ == "__main__":
-    with open(f"{sys.path[0]}/input.txt") as input:
+    with open(f"{sys.path[0]}/test.txt") as input:
         main(input)
