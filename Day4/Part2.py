@@ -11,6 +11,7 @@ def main(file):
     Score = score(boards, board, number, marked)
     print(Score)
 
+
 def score(boards, board, number, marked):
     score = 0
     for i in range(len(boards[board])):
@@ -18,9 +19,10 @@ def score(boards, board, number, marked):
             if marked[board][i][j] != True:
                 score += int(boards[board][i][j])
     return score * number
-                
+
 
 def checkBoards(boards, numbers, marked):
+    currentBoard = []
     for num in numbers:
         for b in range(len(boards)):
             rows, cols = 0, 0
@@ -41,7 +43,11 @@ def checkBoards(boards, numbers, marked):
                     if marked[b][j][i] == True:
                         cols += 1
                     if rows == 5 or cols == 5:
-                        return b, int(num)
+                        if b not in currentBoard:
+                            currentBoard.append(b)
+                        if len(currentBoard) == len(boards):
+                            return currentBoard[-1], int(num)
+                        break
 
 
 def createMarked(boards):
